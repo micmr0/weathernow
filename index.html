@@ -88,13 +88,15 @@ h1{font-size:3em;margin:10px 0}
 
 .app-info{
   max-width:900px;
-  margin:60px auto 0;
+  margin:60px auto;
   text-align:left;
   line-height:1.8;
-  padding:30px;
-  background:rgba(30,41,59,0.65);
-  border-radius:22px;
-  backdrop-filter: blur(10px);
+  padding:32px;
+  background:rgba(30,41,59,0.72);
+  border-radius:24px;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+  border:1px solid rgba(255,255,255,0.05);
 }
 
 .app-info h2{text-align:center;margin-bottom:18px;font-size:1.9em}
@@ -182,6 +184,15 @@ footer{
   margin:60px 0;
   opacity:.6;
 }
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  background: radial-gradient(circle at 20% 20%, rgba(56,189,248,0.08), transparent 40%),
+              radial-gradient(circle at 80% 80%, rgba(59,130,246,0.08), transparent 40%);
+  pointer-events:none;
+  z-index:-1;
+}
 </style>
 </head>
 <body>
@@ -204,13 +215,25 @@ footer{
 
 <section class="app-info">
 <h2>App Info</h2>
-<p>🌦 Fast, clear and accurate weather forecast on a single screen!</p>
-<p>WeatherNow provides all essential weather information for your location and lets you check forecasts anywhere in the world.</p>
-<p>🔹 Instant forecast – full weather data without navigating through multiple screens.</p>
-<p>🔹 Any location – change place with one click and check weather anywhere you want!</p>
-<p>🔹 Intuitive interface – key information presented in a clear way.</p>
-<p>🔹 Accurate data – precise forecasts updated in real time.</p>
-<p>🔹 Activity planner – check whether conditions are suitable for walking, running or cycling.</p>
+
+<p class="lead">🌦 Weather Now – fast, beautiful and precise weather at a glance.</p>
+
+<p>
+Weather Now is a modern weather application designed for clarity, speed and accuracy. 
+Everything you need is presented on a single, clean screen — no unnecessary navigation.
+</p>
+
+<p>With Weather Now you can:</p>
+
+<p>🔹 Get instant, real-time forecasts for your location or anywhere in the world</p>
+<p>🔹 View hourly and daily weather data in a simple, readable format</p>
+<p>🔹 Check air quality, moon information and activity conditions</p>
+<p>🔹 Plan your day with confidence – walking, running or cycling</p>
+
+<p class="lead">
+Weather has never been this fast, simple and accessible 🌍☀🌧
+</p>
+
 </section>
 
 <section class="screens">
