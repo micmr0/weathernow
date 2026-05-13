@@ -48,6 +48,63 @@ body{
   background:linear-gradient(180deg,#020617,#0b1220);
   color:white;
 }
+.promo-row {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin: 60px auto;
+  padding: 10px;
+  flex-wrap: wrap; /* <-- KLUCZ: pozwala łamać wiersze */
+}
+
+.promo-row img {
+  width: 380px;
+  max-width: 90vw; /* responsywne na małych ekranach */
+  border-radius: 34px;
+  box-shadow: 0 30px 90px rgba(0,0,0,0.55);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transform: perspective(1000px) translateZ(0);
+  animation: floaty 7s ease-in-out infinite;
+}
+
+/* Efekt 3D + glow */
+.promo-row img:hover {
+  transform: perspective(1000px) translateZ(55px) rotateX(5deg) rotateY(-5deg);
+  box-shadow: 0 45px 120px rgba(59,130,246,0.55);
+}
+
+/* Idle floating animation */
+@keyframes floaty {
+  0% { transform: translateY(0) perspective(1000px) translateZ(0); }
+  50% { transform: translateY(-8px) perspective(1000px) translateZ(20px); }
+  100% { transform: translateY(0) perspective(1000px) translateZ(0); }
+}
+
+/* TABLET — 2 w linii */
+@media (max-width: 1100px) {
+  .promo-row img {
+    width: 300px;
+  }
+}
+
+/* MAŁE TABLETY / DUŻE TELEFONY — 2 w linii */
+@media (max-width: 800px) {
+  .promo-row img {
+    width: 260px;
+  }
+}
+
+/* TELEFONY — 1 w linii (pionowo) */
+@media (max-width: 600px) {
+  .promo-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .promo-row img {
+    width: 85vw;
+  }
+}
 
 /* HERO */
 .hero{
@@ -68,7 +125,7 @@ body{
 .hero-content{
   position:relative;
   z-index:1;
-  max-width:900px;
+  max-width:1400px;
   margin:auto;
 }
 
@@ -241,7 +298,12 @@ footer{
     <h1>Weather Now</h1>
     <p>Fast. Accurate. Beautiful weather experience.</p>
 
-    <img class="main-shot" src="screens/1.png" alt="Weather Now app preview">
+    <div class="promo-row">
+      <img src="screens/promo1.png" alt="Promo 1">
+      <img src="screens/promo2.png" alt="Promo 2">
+      <img src="screens/promo3.png" alt="Promo 3">
+    </div>
+
 
     <a class="store-btn"
        href="https://play.google.com/store/apps/details?id=com.micmr0.weather"
